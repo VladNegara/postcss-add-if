@@ -2,7 +2,12 @@
   "name": "postcss-add-if",
   "version": "0.0.0",
   "description": "PostCSS plugin that converts declarations to use the if function.",
-  "keywords": ["postcss", "css", "postcss-plugin", "postcss-add-if"],
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "postcss-add-if"
+  ],
   "scripts": {
     "unit": "node --test index.test.js",
     "test": "npm run unit && eslint ."
@@ -17,8 +22,14 @@
     "postcss": "^8.4.27"
   },
   "devDependencies": {
+    "@jest/globals": "^30.4.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.9.1",
+    "dedent": "^1.7.2",
     "eslint": "^8.47.0",
-    "postcss": "^8.4.27"
+    "postcss": "^8.4.27",
+    "ts-jest": "^29.4.11",
+    "typescript": "^6.0.3"
   },
   "eslintConfig": {
     "parserOptions": {
@@ -28,6 +39,8 @@
       "node": true,
       "es6": true
     },
-    "extends": ["eslint:recommended"]
+    "extends": [
+      "eslint:recommended"
+    ]
   }
 }
