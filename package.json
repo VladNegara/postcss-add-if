@@ -42,5 +42,8 @@
     "extends": [
       "eslint:recommended"
     ]
+  },
+  "dependencies": {
+    "postcss-value-parser": "^4.2.0"
   }
 }
