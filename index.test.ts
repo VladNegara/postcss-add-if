@@ -22,7 +22,7 @@ describe('The postcss-add-if plugin', () => {
         }
       }`,
       `body {
-        background: if(media(print): white; else: #eeeeee);
+        background: if(media(print): white; else: #eeeeee)
       }`
     )
   });
