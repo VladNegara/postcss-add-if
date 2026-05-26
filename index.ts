@@ -4,7 +4,7 @@ import valueParser from "postcss-value-parser";
 import type { FunctionNode } from "postcss-value-parser";
 
 export type PluginOptions = {
-  maxDeclarations?: number,
+  maxDeclarations?: number | "infinite",
 };
 
 interface DeclarationStruct {
@@ -21,7 +21,7 @@ const creator: PluginCreator<PluginOptions> = (opts?: PluginOptions) => {
   const options = Object.assign(
     // Default options
     {
-      maxDeclarations: 1,
+      maxDeclarations: "infinite",
     },
     // Provided options
     opts,
@@ -84,7 +84,7 @@ const creator: PluginCreator<PluginOptions> = (opts?: PluginOptions) => {
             }
             // If the at-rule contains more declarations than the maximum count
             // allowed for refactoring, skip it.
-            if ((node.nodes?.filter(n => n.type == "decl").length || 0) > options.maxDeclarations) {
+            if (options.maxDeclarations != "infinite" && (node.nodes?.filter(n => n.type == "decl").length || 0) > options.maxDeclarations) {
               return;
             }
 
