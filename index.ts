@@ -143,7 +143,7 @@ const creator: PluginCreator<PluginOptions> = (opts?: PluginOptions) => {
       });
       for (const prop in declarationDict) {
         const declarationStruct = declarationDict[prop];
-        if (!declarationStruct.atRuleDeclarations) {
+        if (!declarationStruct.atRuleDeclarations.length) {
           continue;
         }
         declarationStruct.baseDeclaration.value = valueParser.stringify(declarationStruct.ifFunction);
