@@ -2,6 +2,8 @@
   "name": "postcss-add-if",
   "version": "0.0.0",
   "description": "PostCSS plugin that converts declarations to use the if function.",
+  "main": "dist/index.js",
+  "type": "module",
   "keywords": [
     "postcss",
     "css",
@@ -10,7 +12,9 @@
   ],
   "scripts": {
     "unit": "node --test index.test.js",
-    "test": "npm run unit && eslint ."
+    "test": "npm run unit && eslint .",
+    "build": "tsc --build",
+    "prepack": "npm run build"
   },
   "author": "Vlad Negara <150728638+VladNegara@users.noreply.github.com>",
   "license": "MIT",

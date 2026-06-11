@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
-    "lib": ["es2018"],
-    "target": "es2018",
-    "module": "node20",
+    "target": "esnext",
+    "module": "esnext",
     "strict": true,
-    "noEmit": true,
     "types": ["node"],
+    "rootDir": ".",
+    "outDir": "dist",
+    "sourceMap": true
   },
   "exclude": ["**/errors.ts"]
 }

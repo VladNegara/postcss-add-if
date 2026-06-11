@@ -2,8 +2,8 @@ import postcss from 'postcss';
 import { describe, expect, it } from '@jest/globals';
 import dedent from 'dedent';
 
-import plugin from './';
-import type { PluginOptions } from './';
+import plugin from './index'
+import type { PluginOptions } from './index';
 
 async function expectChanged(input: string, output: string, opts = {}) {
   input = dedent(input);
