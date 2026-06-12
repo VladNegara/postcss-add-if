@@ -11,11 +11,11 @@ interface DeclarationStruct {
   baseDeclaration: Declaration,
   atRuleDeclarations: Declaration[],
   ifFunction: FunctionNode,
-};
+}
 
 interface DeclarationDict {
   [index: string]: DeclarationStruct,
-};
+}
 
 const creator: PluginCreator<PluginOptions> = (opts?: PluginOptions) => {
   const options = Object.assign(
@@ -29,11 +29,11 @@ const creator: PluginCreator<PluginOptions> = (opts?: PluginOptions) => {
 
   return {
     postcssPlugin: 'postcss-add-if',
-    Rule(rule, helper) {
-      let declarationDict: DeclarationDict = {}
+    Rule(rule) {
+      const declarationDict: DeclarationDict = {}
       rule.each(node => {
         if (node.type == "decl") {
-          let ifFunction: FunctionNode = {
+          const ifFunction: FunctionNode = {
             type: "function",
             value: "if",
             before: "",
@@ -90,7 +90,7 @@ const creator: PluginCreator<PluginOptions> = (opts?: PluginOptions) => {
 
             node.each(child => {
               if (child.type == "decl") {
-                let declarationStruct = declarationDict[child.prop];
+                const declarationStruct = declarationDict[child.prop];
                 if (declarationStruct) {
                   declarationStruct.atRuleDeclarations.push(child);
                   declarationStruct.ifFunction.nodes.unshift(

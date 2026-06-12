@@ -8,7 +8,7 @@ import type { PluginOptions } from './index';
 async function expectChanged(input: string, output: string, opts = {}) {
   input = dedent(input);
   output = dedent(output);
-  let result = await postcss([plugin(opts)]).process(input, { from: undefined });
+  const result = await postcss([plugin(opts)]).process(input, { from: undefined });
   expect(result.css).toBe(output);
   expect(result.warnings().length).toBe(0);
 }
