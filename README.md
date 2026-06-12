@@ -28,5 +28,5 @@ npm ci
 3. Run the tests!
 
 ```bash
-npx jest
+npm test
 ```
